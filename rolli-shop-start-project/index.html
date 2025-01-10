@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<title>Магазин роллов</title>
+	<!-- bootstrap -->
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css"> -->
+	<!-- наши стили -->
 	<link rel="stylesheet" href="css/main.css">
+	<!-- todo шрифты локально -->
 	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700&amp;subset=cyrillic-ext" rel="stylesheet">
 
+	<!-- todo скрипты можно подключить и здесь если использовать defer -->
 </head>
 
-<body>
+<body class="page">
 
 	<header class="header">
 		<div class="container text-center">
-			<img src="img/logo/logo.svg" width="92" alt="Суши и пицца">
-			<div class="display-4">Доставка роллов</div>
-			<p class="lead">Оперативно и вкусно</p>
+			<div class="display-3">Доставка роллов</div>
+			<p class="lead">Очень ролно и вкусно</p>
+			<img src="img/logo/logo.svg" width="150" alt="Суши и пицца">
 		</div>
 	</header>
 
@@ -29,25 +34,25 @@
 					<!-- Ролл -->
 					<div class="col-md-6">
 						<div class="card mb-4" data-id="01">
-							<img class="product-img" src="img/roll/philadelphia.jpg" alt="">
+							<img class="product-img" src="img/roll/philadelphia.jpg" title="6 штук Ролл Филадельфия" alt="6 штук Ролл Филадельфия">
 							<div class="card-body text-center">
 								<h4 class="item-title">Филадельфия хит ролл</h4>
-								<p><small data-items-in-box class="text-muted">6 шт.</small></p>
+								<p><small data-items-in-box class="text-muted" title=" 6 штук - количество ролл в одном сете">6 шт.</small></p>
 
 								<div class="details-wrapper">
 									<div class="items counter-wrapper">
-										<div class="items__control" data-action="minus">-</div>
-										<div class="items__current" data-counter>1</div>
-										<div class="items__control" data-action="plus">+</div>
+										<div class="items__control" data-action="minus" title="Уменьшить количество в заказе">-</div>
+										<div class="items__current" data-counter  title="Текущее количество сетов в заказе 1">1</div>
+										<div class="items__control" data-action="plus" title="Уменьшить количество в заказе">+</div>
 									</div>
 
 									<div class="price">
-										<div class="price__weight">180г.</div>
-										<div class="price__currency">300 ₽</div>
+										<p class="price__weight mb-0" title="Вес одного сета 180 грам">180г.</p>
+										<p class="price__currency mb-0" title="Цена одного сета 300 рублей">300&nbsp;<span class="rouble-symbol rouble-black">₽</span></p>
 									</div>
 								</div>
 
-								<button data-cart type="button" class="btn btn-block btn-outline-warning">+ в корзину</button>
+								<button data-cart type="button" class="btn btn-block btn-outline-warning" title="Добавить в корзину">+ в корзину</button>
 
 							</div>
 						</div>
@@ -60,7 +65,7 @@
 							<img class="product-img" src="img/roll/california-tempura.jpg" alt="">
 							<div class="card-body text-center">
 								<h4 class="item-title">Калифорния темпура</h4>
-								<p><small data-items-in-box class="text-muted">6 шт.</small></p>
+								<p><small data-items-in-box class="text-muted">8 шт.</small></p>
 
 								<div class="details-wrapper">
 									<div class="items counter-wrapper">
@@ -70,8 +75,8 @@
 									</div>
 
 									<div class="price">
-										<div class="price__weight">205г.</div>
-										<div class="price__currency">250 ₽</div>
+										<p class="price__weight mb-0">205г.</p>
+										<p class="price__currency mb-0">250&nbsp;<span class="rouble-symbol">₽</span></p>
 									</div>
 								</div>
 
@@ -146,13 +151,21 @@
 			</div>
 			<div class="col-md-4">
 
+
+
 				<!-- Корзина -->
-				<div class="card mb-4">
-					<div class="card-body">
-						<h5 class="card-title">Ваш заказ</h4>
-						<div data-cart-empty class="alert alert-secondary" role="alert">
+				<div class="card mb-4 cart">
+					<div class="card-body cart-body">
+						<h5 class="card-title cart-title">Ваш заказ</h4>
+
+						<p data-cart-empty class="alert alert-secondary" role="alert">
 							Корзина пуста
-						</div>
+						</p>
+
+						<p data-cart-empty class="alert alert-success" role="alert">
+							В корзине что-то есть
+						</p>
+
 						<!-- cart-wrapper -->
 						<div class="cart-wrapper">
 
@@ -164,24 +177,82 @@
 									</div>
 									<div class="cart-item__desc">
 										<div class="cart-item__title">Калифорния темпура</div>
+
 										<div class="cart-item__weight">6 шт. / 205г.</div>
 
 										<!-- cart-item__details -->
 										<div class="cart-item__details">
-
 											<div class="items items--small counter-wrapper">
 												<div class="items__control" data-action="minus">-</div>
-												<div class="items__current" data-counter="">1</div>
+												<div class="items__current" data-counter="1">1</div>
 												<div class="items__control" data-action="plus">+</div>
 											</div>
 
 											<div class="price">
-												<div class="price__currency">250 ₽</div>
+												<p class="price__currency mb-0">250&nbsp;<span class="rouble-symbol rouble-black">₽</span></p>
 											</div>
-
 										</div>
 										<!-- // cart-item__details -->
+									</div>
+								</div>
+							</div>
+							<!-- // Cart item -->
 
+
+							<!-- Cart item -->
+							<div class="cart-item" data-id="02">
+								<div class="cart-item__top">
+									<div class="cart-item__img">
+										<img src="img/roll/california-tempura.jpg" alt="">
+									</div>
+									<div class="cart-item__desc">
+										<div class="cart-item__title">Калифорния темпура</div>
+
+										<div class="cart-item__weight">6 шт. / 205г.</div>
+
+										<!-- cart-item__details -->
+										<div class="cart-item__details">
+											<div class="items items--small counter-wrapper">
+												<div class="items__control" data-action="minus">-</div>
+												<div class="items__current" data-counter="1">1</div>
+												<div class="items__control" data-action="plus">+</div>
+											</div>
+
+											<div class="price">
+												<p class="price__currency mb-0">250&nbsp;<span class="rouble-symbol rouble-black">₽</span></p>
+											</div>
+										</div>
+										<!-- // cart-item__details -->
+									</div>
+								</div>
+							</div>
+							<!-- // Cart item -->
+
+
+							<!-- Cart item -->
+							<div class="cart-item" data-id="02">
+								<div class="cart-item__top">
+									<div class="cart-item__img">
+										<img src="img/roll/zapech-california.jpg" alt="">
+									</div>
+									<div class="cart-item__desc">
+										<div class="cart-item__title">Калифорния темпура</div>
+
+										<div class="cart-item__weight">6 шт. / 205г.</div>
+
+										<!-- cart-item__details -->
+										<div class="cart-item__details">
+											<div class="items items--small counter-wrapper">
+												<div class="items__control" data-action="minus">-</div>
+												<div class="items__current" data-counter="1">1</div>
+												<div class="items__control" data-action="plus">+</div>
+											</div>
+
+											<div class="price">
+												<p class="price__currency mb-0">250&nbsp;<span class="rouble-symbol rouble-black">₽</span></p>
+											</div>
+										</div>
+										<!-- // cart-item__details -->
 									</div>
 								</div>
 							</div>
@@ -192,8 +263,9 @@
 
 						<!-- Стоимость заказа -->
 						<div class="cart-total">
-							<p><span class="h5">Доставка:</span> <span class="delivery-cost free">бесплатно</span> </p>
-							<p><span class="h5">Итого:</span> <span class="total-price">330</span> <span class="rouble">₽</span></p>
+							<p><span class="h5">Доставка:</span> <span class="delivery-cost free" title="Стоимость доставки">бесплатно</span> </p>
+
+							<p><span class="h5">Итого:</span> <span class="total-price">330</span> <span class="rouble rouble-red">₽</span></p>
 						</div>
 						<!-- // Стоимость заказа -->
 
@@ -202,11 +274,12 @@
 					<!-- Оформить заказ -->
 					<div id="order-form" class="card-body border-top">
 						<h5 class="card-title">Оформить заказ</h4>
-						<form>
+						<form class="form">
 							<div class="form-group">
+								<!-- todo сделать верификацию номера телефона -->
 								<input type="text" class="form-control" placeholder="Ваш номер телефона">
 							</div>
-							<button type="submit" class="btn btn-primary">Заказать</button>
+							<button type="submit" class="btn btn-primary mb-4" title="Оформить заказ">Заказать</button>
 						</form>
 					</div>
 					<!-- // Оформить заказ -->
@@ -220,7 +293,7 @@
 	</div>
 
 	<!-- Подключаем скрипты -->
-
+	<!-- Скрипты можно подключить вверху, используй defer или module -->
 </body>
 
 </html>
