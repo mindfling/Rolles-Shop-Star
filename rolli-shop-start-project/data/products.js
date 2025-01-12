@@ -40,3 +40,16 @@ export const products = [
     currency: '₽',
   },
 ]
+/*
+  {
+    id: '76',
+    image: 'img/roll/zapech-california.jpg',
+    title: 'Запеченый ролл ЕЩЕ',
+    number: 6,
+    description: 'Запеченных ролл «ЕЩЕ»',
+    weight: 225,
+    price: 250,
+    currency: '$',
+  },
+]
+*/
